@@ -4,19 +4,6 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.github.jrcarcamod"
-version = "1.0"
-
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = "com.github.jrcarcamod"
-            artifactId = "library"
-            version = "1.0"
-        }
-    }
-}
-
 android {
     namespace = "com.siprocal.sdk"
     compileSdk = 33
@@ -38,8 +25,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = "1.8"
