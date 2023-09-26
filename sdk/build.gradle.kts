@@ -45,3 +45,15 @@ dependencies {
     implementation(project(":core"))
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("all") {
+                from(components["release"])
+                groupId = "com.github.jrcarcamod"
+                version = "1.0"
+                artifactId = "SDK"
+            }
+        }
+    }
+}
