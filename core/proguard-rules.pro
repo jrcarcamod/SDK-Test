@@ -20,6 +20,6 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep interface com.siprocal.core.ITelephonyProfile { *; }
--keep interface com.siprocal.core.IMobileProfile { *; }
--keep interface com.siprocal.core.IAppInsight { *; }
+-keep class com.siprocal.core.ITelephonyProfile { *; }
+-keep class com.siprocal.core.IMobileProfile { *; }
+-keep class com.siprocal.core.IAppInsight { *; }
