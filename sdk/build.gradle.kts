@@ -8,6 +8,17 @@ plugins {
 group = "com.github.jrcarcamod"
 version = "1.0"
 
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("all") {
+                groupId = "com.github.jrcarcamod"
+                version = "1.0"
+            }
+        }
+    }
+}
+
 
 android {
     namespace = "com.siprocal.sdk"
@@ -48,7 +59,7 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0")
 
     implementation(project(":core"))
 }
