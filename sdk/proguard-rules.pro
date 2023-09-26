@@ -19,3 +19,7 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep interface com.siprocal.core.IAppInsight { *; }
+-keep interface com.siprocal.core.IMobileProfile { *; }
+-keep interface com.siprocal.core.ITelephonyProfile { *; }
