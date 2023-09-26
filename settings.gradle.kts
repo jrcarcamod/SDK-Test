@@ -21,7 +21,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Siprocal-SDK"
-include(":app")
 include(":sdk")
 include(":core")
 include(":AppInsight")
