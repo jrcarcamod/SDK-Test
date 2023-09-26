@@ -5,9 +5,14 @@ plugins {
 
 }
 
+group = "com.github.jrcarcamod"
+version = "1.0"
+
+
 android {
     namespace = "com.siprocal.sdk"
     compileSdk = 33
+    group = ""
 
     defaultConfig {
         minSdk = 24
@@ -42,6 +47,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31")
 
     implementation(project(":core"))
 }
