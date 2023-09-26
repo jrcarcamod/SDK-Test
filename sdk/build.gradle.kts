@@ -2,28 +2,24 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("maven-publish")
-
 }
 
 group = "com.github.jrcarcamod"
 version = "1.0"
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("all") {
-                groupId = "com.github.jrcarcamod"
-                version = "1.0"
-            }
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.github.jrcarcamod"
+            artifactId = "library"
+            version = "1.0"
         }
     }
 }
 
-
 android {
     namespace = "com.siprocal.sdk"
     compileSdk = 33
-    group = ""
 
     defaultConfig {
         minSdk = 24
@@ -59,7 +55,6 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0")
-
     implementation(project(":core"))
 }
+
