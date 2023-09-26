@@ -33,6 +33,11 @@ android {
     }
 }
 
+tasks.register<Jar>("sourceJar") {
+    from(project.android.sourceSets["main"].java.srcDirs)
+    archiveClassifier.set("sources")
+}
+
 dependencies {
 
     implementation("androidx.core:core-ktx:1.9.0")
