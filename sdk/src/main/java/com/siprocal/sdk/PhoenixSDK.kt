@@ -7,8 +7,8 @@ import com.siprocal.core.IAppInsight
 import com.siprocal.core.IMobileProfile
 import com.siprocal.core.ITelephonyProfile
 
-@Keep
 object PhoenixSDK {
+    @JvmStatic
     fun init(
         context: Context,
         appInsight: IAppInsight? = null,

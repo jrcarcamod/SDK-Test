@@ -19,8 +19,13 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
-
+-keepattributes InnerClasses
 -keep class com.siprocal.core.ITelephonyProfile { *; }
 -keep class com.siprocal.core.IMobileProfile { *; }
 -keep class com.siprocal.core.IAppInsight { *; }
 -keep class com.siprocal.sdk.PhoenixSDK { *; }
+#-keepclassmembers class com.siprocal.sdk.PhoenixSDK {
+#    public static void init(android.content.Context,
+#                            com.siprocal.core.IAppInsight,
+#                            com.siprocal.core.ITelephonyProfile, com.siprocal.core.IMobileProfile);
+# }
