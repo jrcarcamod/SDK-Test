@@ -7,7 +7,6 @@ import com.siprocal.core.IAppInsight
 import com.siprocal.core.IMobileProfile
 import com.siprocal.core.ITelephonyProfile
 
-@Keep
 class PhoenixSDK private constructor(
     private val context: Context,
     private val appInsight: IAppInsight? = null,
@@ -15,9 +14,15 @@ class PhoenixSDK private constructor(
     private val mobileProfile: IMobileProfile? = null
 ) {
     companion object {
-        fun init(context: Context, initBlock: PhoenixSDK.() -> Unit) {
-            val sdk = PhoenixSDK(context)
-            sdk.initBlock()
+        @JvmStatic
+        @JvmName("initSdk")
+        fun init(
+            context: Context,
+            appInsight: IAppInsight? = null,
+            telephonyProfile: ITelephonyProfile? = null,
+            mobileProfile: IMobileProfile? = null
+        ) {
+            val sdk = PhoenixSDK(context, appInsight, telephonyProfile, mobileProfile)
             sdk.internalInit()
         }
     }
