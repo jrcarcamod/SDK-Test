@@ -8,11 +8,13 @@ import com.siprocal.core.ITelephonyProfile
 
 class PhoenixSDK {
     companion object{
+        @JvmStatic
         fun init(
             context: Context,
             appInsight: IAppInsight? = null,
             telephonyProfile: ITelephonyProfile? = null,
-            mobileProfile: IMobileProfile? = null){
+            mobileProfile: IMobileProfile? = null
+        ){
             appInsight?.getAppInsight(context)
             telephonyProfile?.getTelephonyProfile()
             mobileProfile?.getMobileProfile(context)
