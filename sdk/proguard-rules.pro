@@ -24,8 +24,4 @@
 -keep class com.siprocal.core.IMobileProfile { *; }
 -keep class com.siprocal.core.IAppInsight { *; }
 -keep class com.siprocal.sdk.PhoenixSDK { *; }
-#-keepclassmembers class com.siprocal.sdk.PhoenixSDK {
-#    public static void init(android.content.Context,
-#                            com.siprocal.core.IAppInsight,
-#                            com.siprocal.core.ITelephonyProfile, com.siprocal.core.IMobileProfile);
-# }
+-keep @androidx.annotation.Keep class * { *; }

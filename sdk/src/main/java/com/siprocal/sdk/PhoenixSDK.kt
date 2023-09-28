@@ -6,6 +6,8 @@ import androidx.annotation.Keep
 import com.siprocal.core.IAppInsight
 import com.siprocal.core.IMobileProfile
 import com.siprocal.core.ITelephonyProfile
+
+@Keep
 class PhoenixSDK private constructor(
     private val context: Context,
     private val appInsight: IAppInsight? = null,
