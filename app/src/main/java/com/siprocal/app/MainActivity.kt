@@ -11,7 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.siprocal.app.ui.theme.SiprocalSDKTheme
+import com.siprocal.appinsight.AppInsight
+import com.siprocal.mobileprofile.MobilieProfile
 import com.siprocal.sdk.PhoenixSDK
+import com.siprocal.telephonyprofile.TelephonyProfile
 
 //import com.siprocal.appinsight.AppInsight
 //import com.siprocal.mobileprofile.MobilieProfile
@@ -31,7 +34,11 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        PhoenixSDK.init(this){}
+        val phoenixSDK = PhoenixSDK.Builder(this)
+            .setAppInsight(AppInsight())
+            .setMobileProfile(MobilieProfile())
+            .setTelephonyProfile(TelephonyProfile())
+            .build()
     }
 }
 

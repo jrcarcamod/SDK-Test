@@ -15,15 +15,34 @@ class PhoenixSDK private constructor(
 ) {
     companion object {
         @JvmStatic
-        @JvmName("initSdk")
-        fun init(
-            context: Context,
-            appInsight: IAppInsight? = null,
-            telephonyProfile: ITelephonyProfile? = null,
-            mobileProfile: IMobileProfile? = null
-        ) {
-            val sdk = PhoenixSDK(context, appInsight, telephonyProfile, mobileProfile)
-            sdk.internalInit()
+        inline fun build(context: Context, block: Builder.() -> Unit) = Builder(context).apply(block).build()
+    }
+
+
+    class Builder(private val context: Context) {
+        private var appInsight: IAppInsight? = null
+        private var telephonyProfile: ITelephonyProfile? = null
+        private var mobileProfile: IMobileProfile? = null
+
+        fun setAppInsight(appInsight: IAppInsight?): Builder {
+            this.appInsight = appInsight
+            return this
+        }
+
+        fun setTelephonyProfile(telephonyProfile: ITelephonyProfile?): Builder {
+            this.telephonyProfile = telephonyProfile
+            return this
+        }
+
+        fun setMobileProfile(mobileProfile: IMobileProfile?): Builder {
+            this.mobileProfile = mobileProfile
+            return this
+        }
+
+        fun build(): PhoenixSDK {
+            val phoenixSDK = PhoenixSDK(context, appInsight, telephonyProfile, mobileProfile)
+            phoenixSDK.internalInit() // Ejecuta los métodos de inicialización
+            return phoenixSDK
         }
     }
 
