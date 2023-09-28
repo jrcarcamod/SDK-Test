@@ -13,9 +13,9 @@ class PhoenixSDK {
             appInsight: IAppInsight? = null,
             telephonyProfile: ITelephonyProfile? = null,
             mobileProfile: IMobileProfile? = null){
-            appInsight?.getAppInsight()
+            appInsight?.getAppInsight(context)
             telephonyProfile?.getTelephonyProfile()
-            mobileProfile?.getMobileProfile()
+            mobileProfile?.getMobileProfile(context)
             Log.d("SDK", "Inicio los procesos del SDK principal")
         }
     }

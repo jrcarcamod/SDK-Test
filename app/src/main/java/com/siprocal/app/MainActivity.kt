@@ -11,6 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.siprocal.app.ui.theme.SiprocalSDKTheme
+import com.siprocal.appinsight.AppInsight
+import com.siprocal.mobileprofile.MobilieProfile
+import com.siprocal.sdk.PhoenixSDK
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +29,7 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+        PhoenixSDK.init(this, appInsight = AppInsight(), mobileProfile = MobilieProfile())
     }
 }
 
