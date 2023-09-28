@@ -2,13 +2,15 @@ package com.siprocal.sdk
 
 import android.content.Context
 import android.util.Log
+import androidx.annotation.Keep
 import com.siprocal.core.IAppInsight
 import com.siprocal.core.IMobileProfile
 import com.siprocal.core.ITelephonyProfile
 
+@Keep
 class PhoenixSDK {
     companion object{
-        @JvmStatic
+        @Keep
         fun init(
             context: Context,
             appInsight: IAppInsight? = null,
